@@ -22,8 +22,8 @@ let wind = document.getElementById("cardg");
 
 
 btn.addEventListener("click", () => {
-  function response() {
-    let weather = fetch(
+ 
+   fetch(
       `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=5c0172544e3c22ffd6a7928d766ad4fd&units=metric`
     )
       .then((data) => data.json())
@@ -42,8 +42,9 @@ btn.addEventListener("click", () => {
         wind.innerHTML = ` ${ele.wind.speed} KM/h`;
       })
       .catch((error) => console.log(error));
-  }
-  response();
+      card.innerHTML = `${input.value}`
+  });
 
-  card.innerHTML = `${input.value}`;
-});
+
+
+
